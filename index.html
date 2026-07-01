@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===================== SEO / META ===================== -->
+  <title>watermelonKode | VocabKit, the vocabulary app</title>
+  <meta name="description" content="watermelonKode is an independent studio building VocabKit, a vocabulary app for people who live, work, and learn in a second language. Join the waitlist." />
+  <link rel="canonical" href="https://vocabkit.ca/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (link previews on social) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vocabkit.ca/" />
+  <meta property="og:title" content="watermelonKode | VocabKit, the vocabulary app" />
+  <meta property="og:description" content="An independent studio building tools for life in a second language. VocabKit is almost here. Join the waitlist." />
+  <meta property="og:site_name" content="watermelonKode" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="watermelonKode | VocabKit, the vocabulary app" />
+  <meta name="twitter:description" content="An independent studio building tools for life in a second language. VocabKit is almost here. Join the waitlist." />
+
+  <!-- Favicon (inline watermelon-seed mark, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F0F0F'/%3E%3Cellipse cx='16' cy='16' rx='5' ry='8' transform='rotate(28 16 16)' fill='%23FF6060'/%3E%3C/svg%3E" />
+
+  <!-- Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0F0F0F;
+      --bg-elev: #151515;
+      --bg-card: #181818;
+      --border: #262626;
+      --border-soft: #1E1E1E;
+
+      --text: #F0EDE8;
+      --text-dim: #A6A29D;
+      --text-faint: #6C6964;
+
+      /* watermelonKode red scale */
+      --red: #FF6060;
+      --red-light: #FF7272;
+      --red-deep: #DA4545;
+      --seed: #DA4545;
+      --btn-text: #FFFFFF;
+
+      --maxw: 1080px;
+      --font: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    ::selection { background: rgba(255,96,96,0.30); color: #fff; }
+
+    :focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ============ seed motif (the signature) ============ */
+    .seed {
+      display: inline-block;
+      width: 9px; height: 13px;
+      border-radius: 50%;
+      background: linear-gradient(160deg, var(--red-light), var(--red-deep));
+      transform: rotate(26deg);
+      flex-shrink: 0;
+    }
+
+    /* ===================== NAV ===================== */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(15,15,15,0.72);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.0625rem; letter-spacing: -0.01em; }
+    .brand b { font-weight: 800; }
+    .brand span { color: var(--text-dim); font-weight: 600; }
+    .logo-mark { width: 24px; height: 24px; display: block; flex-shrink: 0; }
+
+    .nav-cta {
+      font-size: 0.875rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: border-color .2s ease, background .2s ease, transform .2s ease;
+    }
+    .nav-cta:hover { border-color: var(--red); background: rgba(255,96,96,0.08); }
+
+    /* ===================== HERO ===================== */
+    .hero { position: relative; padding: 120px 0 100px; overflow: hidden; }
+    .glow {
+      position: absolute; top: -180px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 700px; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(closest-side, rgba(255,96,96,0.26), rgba(255,96,96,0) 70%),
+        radial-gradient(closest-side, rgba(29,158,117,0.08), rgba(29,158,117,0) 72%);
+      background-position: 50% 30%, 30% 62%;
+      filter: blur(20px);
+    }
+    .hero .wrap { position: relative; z-index: 1; text-align: center; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--red-light);
+      padding: 6px 14px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,96,96,0.06);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6.4vw, 4.75rem);
+      font-weight: 800; line-height: 1.04; letter-spacing: -0.035em;
+      margin: 28px auto 0; max-width: 16ch;
+    }
+    h1 .hl { color: var(--red-light); }
+
+    .sub {
+      margin: 26px auto 0; max-width: 56ch;
+      font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+      color: var(--text-dim); line-height: 1.6;
+    }
+
+    .hero-actions { margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.9375rem; font-weight: 700;
+      padding: 15px 28px; border-radius: 999px;
+      color: var(--btn-text);
+      background: linear-gradient(135deg, var(--red-deep), var(--red));
+      box-shadow: 0 8px 30px -8px rgba(255,96,96,0.5);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 38px -8px rgba(255,96,96,0.65); }
+    .btn-primary svg { transition: transform .2s ease; }
+    .btn-primary:hover svg { transform: translateX(3px); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center;
+      font-size: 0.9375rem; font-weight: 600;
+      padding: 15px 24px; border-radius: 999px;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .btn-ghost:hover { color: var(--text); border-color: var(--text-faint); }
+
+    /* ===================== PRODUCT ===================== */
+    .product { padding: 40px 0 100px; }
+    .panel {
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255,96,96,0.05), rgba(255,96,96,0) 40%),
+        var(--bg-elev);
+      border-radius: 28px;
+      padding: clamp(32px, 5vw, 64px);
+    }
+    .panel-head { max-width: 60ch; }
+    .kicker { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); }
+    .product-name {
+      display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .product-name h2 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; }
+    .product-logo { width: 42px; height: 42px; border-radius: 11px; display: block; }
+    .product-name .tag {
+      font-size: 0.75rem; font-weight: 600; color: var(--red-light);
+      padding: 5px 12px; border-radius: 999px;
+      background: rgba(255,96,96,0.10); border: 1px solid rgba(255,96,96,0.25);
+    }
+    .product-line { margin-top: 16px; font-size: clamp(1.125rem, 2.4vw, 1.5rem); color: var(--text); font-weight: 500; letter-spacing: -0.01em; line-height: 1.4; }
+
+    .features { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .feature { padding-top: 22px; border-top: 1px solid var(--border); }
+    .feature .mark { display: flex; align-items: center; gap: 10px; }
+    .feature h3 { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; }
+    .feature p { margin-top: 10px; font-size: 0.9375rem; color: var(--text-dim); line-height: 1.6; }
+
+    /* ===================== WAITLIST ===================== */
+    .waitlist { padding: 30px 0 110px; }
+    .waitlist .wrap { text-align: center; }
+    .waitlist h2 { font-size: clamp(2rem, 4.6vw, 3.25rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; }
+    .waitlist .sub { margin-top: 18px; }
+
+    .signup { margin: 36px auto 0; max-width: 480px; }
+
+    /* --- styled placeholder form: swap for your LaunchList embed --- */
+    .waitlist-form { display: flex; gap: 10px; }
+    .waitlist-form input[type="email"] {
+      flex: 1; min-width: 0;
+      font-family: var(--font); font-size: 0.9375rem;
+      padding: 15px 18px; border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .waitlist-form input::placeholder { color: var(--text-faint); }
+    .waitlist-form input:focus { outline: none; border-color: var(--red); background: #141414; }
+    .waitlist-form button {
+      font-family: var(--font); font-size: 0.9375rem; font-weight: 700;
+      padding: 15px 26px; border-radius: 999px; border: none; cursor: pointer;
+      color: var(--btn-text); white-space: nowrap;
+      background: linear-gradient(135deg, var(--red-deep), var(--red));
+      box-shadow: 0 8px 26px -10px rgba(255,96,96,0.55);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .waitlist-form button:hover { transform: translateY(-2px); box-shadow: 0 14px 34px -10px rgba(255,96,96,0.7); }
+
+    .reassure { margin-top: 16px; font-size: 0.8125rem; color: var(--text-faint); display: flex; align-items: center; justify-content: center; gap: 7px; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: #1D9E75; box-shadow: 0 0 8px rgba(29,158,117,0.7); }
+
+    /* ===================== FOOTER ===================== */
+    footer { border-top: 1px solid var(--border-soft); padding: 48px 0; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .foot-left { display: flex; flex-direction: column; gap: 6px; }
+    .foot-brand { display: flex; align-items: center; gap: 9px; font-weight: 700; }
+    .foot-brand .logo-mark { width: 20px; height: 20px; }
+    .foot-meta { font-size: 0.8125rem; color: var(--text-faint); }
+    .foot-meta a { color: var(--text-dim); }
+    .foot-meta a:hover { color: var(--text); }
+    .socials { display: flex; gap: 22px; font-size: 0.875rem; }
+    .socials a { color: var(--text-dim); transition: color .2s ease; }
+    .socials a:hover { color: var(--text); }
+
+    /* ===================== MOTION ===================== */
+    .reveal { opacity: 0; transform: translateY(18px); }
+    .in { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    .hero .eyebrow { animation: rise .7s ease both .05s; }
+    .hero h1 { animation: rise .8s ease both .15s; }
+    .hero .sub { animation: rise .8s ease both .28s; }
+    .hero .hero-actions { animation: rise .8s ease both .4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, .reveal { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 760px) {
+      .hero { padding: 84px 0 64px; }
+      .features { grid-template-columns: 1fr; gap: 0; }
+      .feature { padding: 22px 0; border-top: 1px solid var(--border); }
+      .feature:first-child { padding-top: 6px; }
+      .waitlist-form { flex-direction: column; }
+      .waitlist-form button { width: 100%; }
+      .foot-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" aria-label="watermelonKode home">
+        <img src="assets/watermelonkode-logo.png" alt="" class="logo-mark" aria-hidden="true" />
+        <span>watermelon<b style="color:var(--text)">Kode</b></span>
+      </a>
+      <a href="#waitlist" class="nav-cta">Join the waitlist</a>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="top">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow"><span class="seed" aria-hidden="true" style="width:7px;height:10px"></span>Independent software studio</span>
+      <h1>Software for life in a <span class="hl">second language</span>.</h1>
+      <p class="sub">watermelonKode makes thoughtful tools for people who live, work, and think in a language they are still learning. Our first product is almost here.</p>
+      <div class="hero-actions">
+        <a href="#waitlist" class="btn-primary">
+          Join the VocabKit waitlist
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#vocabkit" class="btn-ghost">See what we are building</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== PRODUCT ===================== -->
+  <section class="product" id="vocabkit">
+    <div class="wrap">
+      <div class="panel reveal">
+        <div class="panel-head">
+          <div class="kicker">First product</div>
+          <div class="product-name">
+            <img src="assets/vocabkit-logo.png" alt="VocabKit logo" class="product-logo" />
+            <h2>VocabKit</h2>
+            <span class="tag">Coming soon</span>
+          </div>
+          <p class="product-line">Master the words you need, in the language you are learning.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="mark"><span class="seed" aria-hidden="true"></span><h3>Words in real context</h3></div>
+            <p>Every word is shown the way you will actually meet it. In a sentence, a message, a moment from real life. Never a definition on its own.</p>
+          </div>
+          <div class="feature">
+            <div class="mark"><span class="seed" aria-hidden="true"></span><h3>Built for B1 to C2</h3></div>
+            <p>For intermediate and advanced learners who already understand the language and want the right word ready at the right moment.</p>
+          </div>
+          <div class="feature">
+            <div class="mark"><span class="seed" aria-hidden="true"></span><h3>English and French</h3></div>
+            <p>Launching with both, so you can build vocabulary in the language that matters for your studies, your work, and your life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WAITLIST ===================== -->
+  <section class="waitlist" id="waitlist">
+    <div class="wrap">
+      <h2 class="reveal">Be first to try VocabKit.</h2>
+      <p class="sub reveal">Join the waitlist and we will send one email the day it launches. That is the only reason we will reach out.</p>
+
+      <div class="signup reveal">
+        <!--
+          ====================================================================
+          WAITLIST SIGNUP
+          The form below is a styled placeholder. To make it collect emails,
+          replace this whole .waitlist-form block with your LaunchList embed,
+          OR point the form at your LaunchList endpoint.
+          LaunchList also offers a drop-in widget:
+            <div class="launchlist-widget" data-key-id="YOUR_KEY" data-height="180px"></div>
+            <script src="https://getlaunchlist.com/js/widget-diy.js" defer></script>
+          (Verify the current embed code on getlaunchlist.com before using.)
+          ====================================================================
+        -->
+        <form class="waitlist-form" onsubmit="return false;">
+          <input type="email" placeholder="you@email.com" aria-label="Email address" required />
+          <button type="submit">Join the waitlist</button>
+        </form>
+        <p class="reassure"><span class="dot" aria-hidden="true"></span> No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="wrap foot-inner">
+      <div class="foot-left">
+        <div class="foot-brand"><img src="assets/watermelonkode-logo.png" alt="" class="logo-mark" aria-hidden="true" /> watermelonKode</div>
+        <div class="foot-meta">
+          Built in Canada &middot; <a href="mailto:info@vocabkit.ca">info@vocabkit.ca</a>
+        </div>
+        <div class="foot-meta">&copy; 2026 watermelonKode. All rights reserved.</div>
+      </div>
+      <nav class="socials" aria-label="More from watermelonKode">
+        <a href="#" rel="noopener">Instagram</a>
+        <a href="#" rel="noopener">TikTok</a>
+        <a href="#" rel="noopener">Threads</a>
+        <a href="https://blog.watermelonkode.com" rel="noopener" target="_blank">Medium</a>
+        <a href="https://github.com/watermelonkode" rel="noopener" target="_blank">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Gentle scroll reveal (skipped automatically under reduced-motion via CSS)
+    const els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      els.forEach(el => io.observe(el));
+    } else {
+      els.forEach(el => el.classList.add('in'));
+    }
+  </script>
+
+</body>
+</html>
