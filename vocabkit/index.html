@@ -12,11 +12,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://watermelonkode.com/vocabkit/" />
   <meta property="og:title" content="VocabKit | Vocabulary that keeps up with you" />
-  <meta property="og:description" content="You already think in complex ideas. VocabKit helps your vocabulary catch up. Join the waitlist." />
+  <meta property="og:description" content="You already understand English. VocabKit helps you expand the words you can use. Join the waitlist." />
   <meta property="og:site_name" content="watermelonKode" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VocabKit | Vocabulary that keeps up with you" />
-  <meta name="twitter:description" content="You already think in complex ideas. VocabKit helps your vocabulary catch up. Join the waitlist." />
+  <meta name="twitter:description" content="You already understand English. VocabKit helps you expand the words you can use. Join the waitlist." />
 
   <link rel="icon" href="../assets/watermelonkode-favicon.png?v=3" sizes="any">
   <meta name="theme-color" content="#000000" />
@@ -100,8 +100,6 @@
     }
     .hero .wrap { position: relative; z-index: 1; text-align: center; }
 
-    .hero-logo { width: 64px; height: 64px; border-radius: 18px; margin-bottom: 24px; }
-
     .eyebrow {
       display: inline-flex; align-items: center; gap: 9px;
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
@@ -110,7 +108,7 @@
       border: 1px solid var(--border);
       background: rgba(255,96,96,0.06);
     }
-    .eyebrow .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--red-light); box-shadow: 0 0 8px rgba(255,114,114,0.8); }
+    .eyebrow img { width: 16px; height: 16px; border-radius: 5px; flex-shrink: 0; }
 
     h1 {
       font-size: clamp(2.4rem, 5.6vw, 4rem);
@@ -133,6 +131,16 @@
       transition: transform .2s ease, box-shadow .2s ease;
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 38px -8px rgba(255,96,96,0.65); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center;
+      font-size: 0.9375rem; font-weight: 600;
+      padding: 15px 24px; border-radius: 999px;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .btn-ghost:hover { color: var(--text); border-color: var(--text-faint); }
 
     .small-links { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
     .btn-small {
@@ -180,16 +188,26 @@
     .dot-live { width: 6px; height: 6px; border-radius: 50%; background: var(--success); box-shadow: 0 0 8px rgba(29,158,117,0.7); }
 
     footer { border-top: 1px solid var(--border-soft); padding: 44px 0; }
-    .foot-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .foot-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .foot-left { display: flex; flex-direction: column; gap: 6px; }
+    .built-by { display: flex; align-items: center; gap: 8px; font-size: 0.8125rem; color: var(--text-faint); }
+    .built-by img { width: 18px; height: 18px; border-radius: 5px; }
+    .built-by a { color: var(--text-dim); font-weight: 600; transition: color .2s ease; }
+    .built-by a:hover { color: var(--text); }
     .foot-meta { font-size: 0.8125rem; color: var(--text-faint); }
     .foot-meta a { color: var(--text-dim); }
     .foot-meta a:hover { color: var(--text); }
+    .socials { display: flex; gap: 20px; font-size: 0.8125rem; }
+    .socials a { color: var(--text-dim); font-weight: 500; transition: color .2s ease; }
+    .socials a:hover { color: var(--text); }
+    .back-row { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-soft); }
 
     @media (max-width: 760px) {
       .features { grid-template-columns: 1fr; gap: 0; }
       .feature { padding: 22px 0; border-top: 1px solid var(--border); }
       .feature:first-child { padding-top: 6px; }
       .voice-grid { grid-template-columns: 1fr; }
+      .foot-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -204,28 +222,27 @@
         <span>/</span>
         <span style="color: var(--text);">VocabKit</span>
       </div>
-      <a href="/#waitlist" class="nav-cta">Join the waitlist</a>
+      <a href="#waitlist" class="nav-cta">Join the waitlist</a>
     </div>
   </nav>
 
   <header class="hero">
     <div class="glow" aria-hidden="true"></div>
     <div class="wrap">
-      <img src="../assets/vocabkit-logo.png" alt="VocabKit logo" class="hero-logo" />
-      <span class="eyebrow"><span class="pulse" aria-hidden="true"></span>Coming Fall 2026</span>
-      <h1>You're not struggling because you're not smart enough. <span class="hl">Your vocabulary just hasn't caught up.</span></h1>
-      <p class="sub">VocabKit shows you the words you already half-know, right where you'll actually use them: in a real sentence, a real moment, a real conversation. Built by watermelonKode for people who understand a language but want it to finally sound like them.</p>
+      <span class="eyebrow">
+        <img src="../assets/vocabkit-logo.png" alt="" aria-hidden="true" />
+        Coming Fall 2026
+      </span>
+      <h1>You already understand English. <span class="hl">Let's expand the words you can use.</span></h1>
+      <p class="sub">VocabKit helps you grow your vocabulary through real sentences and meaningful context, so you can communicate more naturally, confidently, and precisely every day.</p>
       <div class="hero-actions">
-        <a href="/#waitlist" class="btn-primary">
+        <a href="#waitlist" class="btn-primary">
           Join the waitlist
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <a href="#product" class="btn-ghost">See how it works</a>
       </div>
       <div class="small-links">
-        <a href="https://linktr.ee/vocabkit" target="_blank" rel="noopener" class="btn-small">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-          Follow VocabKit
-        </a>
         <a href="privacy-policy/" class="btn-small">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/></svg>
           Privacy Policy
@@ -234,7 +251,7 @@
     </div>
   </header>
 
-  <section class="product">
+  <section class="product" id="product">
     <div class="wrap">
       <div class="panel">
         <div class="kicker">How VocabKit works</div>
@@ -250,8 +267,8 @@
             <p>For people who already understand the language and just want the right word ready the moment they need it, not a beginner's course.</p>
           </div>
           <div class="feature">
-            <h3><span class="dot" aria-hidden="true"></span>English and French</h3>
-            <p>Launching with both, so you can build the vocabulary that actually matters for your studies, your work, and your life.</p>
+            <h3><span class="dot" aria-hidden="true"></span>Pop culture to business</h3>
+            <p>From slang to boardroom terms, build the vocabulary that actually matters for your studies, your work, and your life.</p>
           </div>
         </div>
       </div>
@@ -277,10 +294,10 @@
     </div>
   </section>
 
-  <section class="waitlist" id="join">
+  <section class="waitlist" id="waitlist">
     <div class="wrap">
       <h2>Be first to try VocabKit.</h2>
-      <p class="sub">Join the waitlist and we will send one email the day it launches. That is the only reason we will reach out.</p>
+      <p class="sub">Join the waitlist and be first to know when we launch, plus the occasional vocab tip along the way.</p>
       <div class="signup">
         <div class="launchlist-widget" data-key-id="xyvune" data-height="180px"></div>
         <p class="reassure"><span class="dot-live" aria-hidden="true"></span> No spam. Unsubscribe anytime.</p>
@@ -289,9 +306,25 @@
   </section>
 
   <footer>
-    <div class="wrap foot-inner">
-      <div class="foot-meta">&copy; 2026 VocabKit, built by <a href="/">watermelonKode</a>.</div>
-      <div class="foot-meta"><a href="/">&larr; Back to watermelonKode</a></div>
+    <div class="wrap">
+      <div class="foot-inner">
+        <div class="foot-left">
+          <div class="built-by">
+            <img src="../assets/watermelonkode-logo.png" alt="" aria-hidden="true" />
+            Designed and built by <a href="/">watermelonKode</a>
+          </div>
+          <div class="foot-meta"><a href="mailto:vocabkit@watermelonkode.com">vocabkit@watermelonkode.com</a></div>
+          <div class="foot-meta">&copy; 2026 VocabKit, a watermelonKode product.</div>
+        </div>
+        <nav class="socials" aria-label="VocabKit on social media">
+          <a href="https://www.instagram.com/vocabkit" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@vocabkit" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.threads.com/@vocabkit" target="_blank" rel="noopener">Threads</a>
+        </nav>
+      </div>
+      <div class="back-row">
+        <a href="/" class="foot-meta">&larr; Back to watermelonKode</a>
+      </div>
     </div>
   </footer>
 
